@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 # Setup Selenium Chrome Driver
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options) # PROČ JE VŠECHNO ŠEDÝ ?????????? OD TÝHLE LINE DOLŮ JE VŠECHNO ŠEDÝ
 
 artists = ["4NOFcRCgjvnRy8nKVGUM0L", # steveruu
                 "1NspLfgAsucc39MeTipXNy", # car
@@ -103,7 +103,7 @@ def scrapArtist(artistLink):
 
     # Save response to file
     with open("response.txt", "a") as file:
-        file.writelines(html_soup.prettify().encode('utf-8') + "; ")
+        file.writelines(html_soup.prettify().encode('utf-8'))
     
 
     # Append the artistlink to the array for future iterations
