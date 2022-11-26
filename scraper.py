@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 # Setup Selenium Chrome Driver
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options) # PROČ JE VŠECHNO ŠEDÝ ?????????? OD TÝHLE LINE DOLŮ JE VŠECHNO ŠEDÝ
+driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options)
 
 artists = ["4NOFcRCgjvnRy8nKVGUM0L", # steveruu
                 "1NspLfgAsucc39MeTipXNy", # car
@@ -37,7 +37,7 @@ artists = ["4NOFcRCgjvnRy8nKVGUM0L", # steveruu
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
                 ]
 
-# Set an initial artist seed, I've used my favorite artist Giuseppe Ottaviani
+# seed the program with the artists 
 seed0 = "/artist/" + artists[0]
 seed1 = "/artist/" + artists[1]
 seed2 = "/artist/" + artists[2]
