@@ -116,14 +116,16 @@ def scrapArtist(artistLink):
     fullres = html_soup.prettify().replace(',',' ').replace('monthly listeners','')
     print(fullres)
     
-
-    webhookContent = (response2 + " – " + "**" + fullres.strip('\r\n') + "**" + ml)
+    # chápeš ne
     if (int(fullres.strip('\r\n')) == 1):
         ml = " posluchač měsíčně"
     elif (int(fullres.strip('\r\n')) >= 4):
         ml = " posluchači měsíčně"
-        
+    else:
+        ml = " posluchačů měsíčně"  
 
+    # Send data to webhook
+    webhookContent = (response2 + " – " + "**" + fullres.strip('\r\n') + "**" + ml)
 
     # Save response to file
     with open("response.txt", "a") as file:
@@ -136,11 +138,7 @@ def scrapArtist(artistLink):
     nextLinksToCrawl.append(artistLink)
     return nextLinksToCrawl
    
-
 # run the main loop
-
-
-
 main(seed0)
 main(seed1)
 main(seed2)
