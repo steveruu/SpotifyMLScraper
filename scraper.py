@@ -5,39 +5,48 @@ from selenium import webdriver
 from time import sleep
 from random import randint
 import re
+import discord_webhook
 from bs4 import BeautifulSoup
+from discord_webhook import DiscordWebhook, DiscordEmbed
+
 
 # Setup Selenium Chrome Driver
+browser_locale = 'en-US'
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--lang={}".format(browser_locale))
+
 driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options)
 
-artists = ["4NOFcRCgjvnRy8nKVGUM0L", # steveruu
-                "1NspLfgAsucc39MeTipXNy", # car
+artists = [
+                
                 "3GuGHOzPZ0AhH9hK8LqCsK", # pepap
+                "1NspLfgAsucc39MeTipXNy", # car
                 "2aZD8xH5DKRUwAR6mXAifV", # hakaslakas
                 "3xVvsXvpURgj3zeTYiBtCv", # valian
+                "4NOFcRCgjvnRy8nKVGUM0L", # steveruu
                 "2b5QC4KWCMRKdD7LiqvfMQ", # faon
                 "50ENuvgRkFZ5hMA0BFEeAM", # helena
-                "2qSLwqeQFUHWEzC86u3vRM", # awoken
                 "6kEMNp6TPPl70gOicGT0uN", # děcko acid
+                "2qSLwqeQFUHWEzC86u3vRM", # awoken
                 "3D57Cu0cu9caAvtl41xUx6", # samzel
                 "5QvicxsGxXNicXu1f9guia", # yui paly
-                "70Cg3NKGzk0G16trbrfYE5", # maria
                 "1HbkAuG6cZndTXlORaQgOq", # ubránek
-                "3tjBt96Yk1zS14xc8wldlT", # fembo ypl a
-                "5NTcWbyHYQjA20voWilXeG", # kila asky
+                "70Cg3NKGzk0G16trbrfYE5", # maria
                 "7h22ZneYwwRyOwlgnMd8So", # akarlos
-                "5PNDGjJ1e6Tdr8LWmZDqPO", # ne duch
+                "5NTcWbyHYQjA20voWilXeG", # kila asky
+                "3tjBt96Yk1zS14xc8wldlT", # fembo ypl a
                 "0IM0lwjzI0BYaayMweraKT", # matmej
+                "5PNDGjJ1e6Tdr8LWmZDqPO", # ne duch
                 "34YDbjVGCySBRPAS19xl1L", # paply adomi
-                "2IIf5hkbIzh1dqhG1T132E", # krobra08
                 "3TTWuZxamiQERzR42VNMS5", # sopka
+                "2IIf5hkbIzh1dqhG1T132E", # krobra08
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
                 ]
 
-# seed the program with the artists 
+# Set an initial artist seed
 seed0 = "/artist/" + artists[0]
 seed1 = "/artist/" + artists[1]
 seed2 = "/artist/" + artists[2]
@@ -93,25 +102,47 @@ def scrapArtist(artistLink):
 
     # Store the page response
     response = driver.find_element_by_class_name('Ydwa1P5GkCggtLlSvphs').get_attribute('innerHTML')
-    
+    response2 = driver.find_element_by_class_name('rEN7ncpaUeSGL9z0NGQR').get_attribute('innerHTML').replace('</h1>','')[146:200].replace('">','')
+    if response2 == "COBRA 808":
+        response2 = "COBRA_808"
+    if response2 == "sađz":
+        response2 = "sadz"
+
     # Initialize the returning array to store artist links on the current page
     nextLinksToCrawl = []
 
     # Parse the page source to extract information
     html_soup = BeautifulSoup(response, 'html.parser')
-    print(html_soup)
+    fullres = html_soup.prettify().replace(',',' ').replace('monthly listeners','')
+    print(fullres)
+    
+
+    webhookContent = (response2 + " – " + "**" + fullres.strip('\r\n') + "**" + ml)
+    if (int(fullres.strip('\r\n')) == 1):
+        ml = " posluchač měsíčně"
+    elif (int(fullres.strip('\r\n')) >= 4):
+        ml = " posluchači měsíčně"
+        
+
 
     # Save response to file
     with open("response.txt", "a") as file:
-        file.writelines(html_soup.prettify().encode('utf-8'))
-    
+        file.write(webhookContent)
 
+    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/1046108463304028232/AWucOz4jfF3lBLg_mkqXMMfJgJAwjA_hhMEO2Mubp3vxi63QLpQmRFzPNnytaTqjuqcs', username="cyrexuv vnitrni demon", content=webhookContent)
+    response = webhook.execute() 
+    
     # Append the artistlink to the array for future iterations
     nextLinksToCrawl.append(artistLink)
     return nextLinksToCrawl
 
+   
+    
 
 # run the main loop
+
+
+
 main(seed0)
 main(seed1)
 main(seed2)
@@ -136,3 +167,4 @@ main(seed20)
 main(seed21)
 main(seed22)
 driver.quit()
+
