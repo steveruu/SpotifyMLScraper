@@ -135,9 +135,7 @@ def scrapArtist(artistLink):
     # Append the artistlink to the array for future iterations
     nextLinksToCrawl.append(artistLink)
     return nextLinksToCrawl
-
    
-    
 
 # run the main loop
 
