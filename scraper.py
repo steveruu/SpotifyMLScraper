@@ -6,7 +6,7 @@ from time import sleep
 from random import randint
 from bs4 import BeautifulSoup
 from discord_webhook import DiscordWebhook, DiscordEmbed
-
+from datetime import date
 
 # Setup Selenium Chrome Driver
 browser_locale = 'en-US'
@@ -44,6 +44,7 @@ artists = [
                 "2GaadbJKN8S8PbST0XwwQD", # xfgin
                 "3TTWuZxamiQERzR42VNMS5", # sopka
                 "2IIf5hkbIzh1dqhG1T132E", # krobra08
+                "30ZlxBZfVVt67x1giU0xa4", # hakalas
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
                 ]
@@ -76,6 +77,7 @@ seed23 = "/artist/" + artists[23]
 seed24 = "/artist/" +  artists[24]
 seed25 = "/artist/" + artists[25]
 seed26 = "/artist/" + artists[26]
+seed27 = "/artist/" + artists[27]
 
 # main() will handle the loop and crawling logic
 def main(startingArtist):
@@ -145,6 +147,9 @@ def scrapArtist(artistLink):
     return nextLinksToCrawl
    
 # run the main loop for each artist
+webhook2 = DiscordWebhook(url='https://discord.com/api/webhooks/1046402781696753715/DuBZxciO1pTDRHq3FnEa2EYsMjI1flapP5wsw_VTDNxUh05TPOPZA2TxJnkZJak8taQy', username="cyrex real", content=date.today().strftime("update **%d/%m/%y:**"))
+response = webhook2.execute() 
+
 main(seed0)
 main(seed1)
 main(seed2)
@@ -172,5 +177,6 @@ main(seed23)
 main(seed24)
 main(seed25)
 main(seed26)
+main(seed27)
 driver.quit()
 
