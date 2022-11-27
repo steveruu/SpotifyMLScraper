@@ -28,6 +28,7 @@ artists = [
                 "50ENuvgRkFZ5hMA0BFEeAM", # helena
                 "6kEMNp6TPPl70gOicGT0uN", # děcko acid
                 "2qSLwqeQFUHWEzC86u3vRM", # awoken
+                "2HJYEBrWgHX2MtQng48uSw", # gmane
                 "3D57Cu0cu9caAvtl41xUx6", # samzel
                 "5QvicxsGxXNicXu1f9guia", # yui paly
                 "1HbkAuG6cZndTXlORaQgOq", # ubránek
@@ -35,9 +36,12 @@ artists = [
                 "7h22ZneYwwRyOwlgnMd8So", # akarlos
                 "5NTcWbyHYQjA20voWilXeG", # kila asky
                 "3tjBt96Yk1zS14xc8wldlT", # fembo ypl a
+                "1tqkzvbam2vnrUdredtErd", # shitlord
                 "0IM0lwjzI0BYaayMweraKT", # matmej
+                "0cpiDjS2bR8rWA8JLhU2uM", # givert
                 "5PNDGjJ1e6Tdr8LWmZDqPO", # ne duch
                 "34YDbjVGCySBRPAS19xl1L", # paply adomi
+                "2GaadbJKN8S8PbST0XwwQD", # xfgin
                 "3TTWuZxamiQERzR42VNMS5", # sopka
                 "2IIf5hkbIzh1dqhG1T132E", # krobra08
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
@@ -68,6 +72,10 @@ seed19 = "/artist/" + artists[19]
 seed20 = "/artist/" + artists[20]
 seed21 = "/artist/" + artists[21]
 seed22 = "/artist/" + artists[22]
+seed23 = "/artist/" + artists[23]
+seed24 = "/artist/" +  artists[24]
+seed25 = "/artist/" + artists[25]
+seed26 = "/artist/" + artists[26]
 
 # main() will handle the loop and crawling logic
 def main(startingArtist):
@@ -160,5 +168,9 @@ main(seed19)
 main(seed20)
 main(seed21)
 main(seed22)
+main(seed23)
+main(seed24)
+main(seed25)
+main(seed26)
 driver.quit()
 
