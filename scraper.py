@@ -17,6 +17,7 @@ chrome_options.add_argument("--lang={}".format(browser_locale))
 
 driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=chrome_options)
 
+# Set up artists and their IDs
 artists = [
                 
                 "3GuGHOzPZ0AhH9hK8LqCsK", # pepap
@@ -44,7 +45,7 @@ artists = [
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
                 ]
 
-# Set an initial artist seed
+# Set the artist seeds
 seed0 = "/artist/" + artists[0]
 seed1 = "/artist/" + artists[1]
 seed2 = "/artist/" + artists[2]
@@ -69,7 +70,7 @@ seed20 = "/artist/" + artists[20]
 seed21 = "/artist/" + artists[21]
 seed22 = "/artist/" + artists[22]
 
-# main will handling the loop and crawling logic
+# main() will handle the loop and crawling logic
 def main(startingArtist):
     artistLinks = [startingArtist]
     alreadySearched = [startingArtist]
@@ -84,11 +85,11 @@ def main(startingArtist):
         #randomly sleep between 1-2 seconds to not abuse the server
         sleep(randint(1,2))
 
-# ScrapArtist will handle logic to parse html and collect data for a particular artist
+# scrapArtist() will handle logic to parse html and collect data for a particular artist
 def scrapArtist(artistLink):
     driver.get("https://open.spotify.com" + artistLink)
 
-    # Scroll the page to generate all content
+    # scroll the page to generate all content
     SCROLL_PAUSE_TIME = 0.5
     SCROLL_LENGTH = 200
     page_height = int(driver.execute_script("return document.body.scrollHeight"))
@@ -106,15 +107,15 @@ def scrapArtist(artistLink):
     if response2 == "sađz":
         response2 = "sadz"
 
-    # Initialize the returning array to store artist links on the current page
+    # initialize the returning array to store artist links on the current page
     nextLinksToCrawl = []
 
-    # Parse the page source to extract information
+    # parse the page source to extract information
     html_soup = BeautifulSoup(response, 'html.parser')
     fullres = html_soup.prettify().replace(',',' ').replace('monthly listeners','')
     print(fullres)
     
-    # chápeš ne
+    # czech grammar
     if (int(fullres.strip('\r\n')) == 1):
         ml = " posluchač měsíčně"
     elif (int(fullres.strip('\r\n')) >= 4):
@@ -122,21 +123,21 @@ def scrapArtist(artistLink):
     else:
         ml = " posluchačů měsíčně"  
 
-    # Send data to webhook
+    # send data to webhook
     webhookContent = (response2 + " – " + "**" + fullres.strip('\r\n') + "**" + ml)
 
     # Save response to file
     with open("response.txt", "a") as file:
         file.write(webhookContent)
 
-    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/1046108463304028232/AWucOz4jfF3lBLg_mkqXMMfJgJAwjA_hhMEO2Mubp3vxi63QLpQmRFzPNnytaTqjuqcs', username="cyrexuv vnitrni demon", content=webhookContent)
+    webhook = DiscordWebhook(url='https://discord.com/api/webhooks/1046402781696753715/DuBZxciO1pTDRHq3FnEa2EYsMjI1flapP5wsw_VTDNxUh05TPOPZA2TxJnkZJak8taQy', username="cyrex real", content=webhookContent)
     response = webhook.execute() 
     
     # Append the artistlink to the array for future iterations
     nextLinksToCrawl.append(artistLink)
     return nextLinksToCrawl
    
-# run the main loop
+# run the main loop for each artist
 main(seed0)
 main(seed1)
 main(seed2)
