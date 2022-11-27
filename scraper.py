@@ -19,7 +19,6 @@ driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=ch
 
 # Set up artists and their IDs
 artists = [
-                
                 "3GuGHOzPZ0AhH9hK8LqCsK", # pepap
                 "1NspLfgAsucc39MeTipXNy", # car
                 "2aZD8xH5DKRUwAR6mXAifV", # hakaslakas
@@ -116,12 +115,12 @@ def scrapArtist(artistLink):
     print(fullres)
     
     # czech grammar
-    if (int(fullres.strip('\r\n')) == 1):
-        ml = " posluchač měsíčně"
-    elif (int(fullres.strip('\r\n')) >= 4):
-        ml = " posluchači měsíčně"
+    if (int(fullres.strip('\r\n').replace(' ','')) == 1):
+        ml = "posluchač měsíčně"
+    elif (int(fullres.strip('\r\n').replace(' ','')) <= 4):
+        ml = "posluchači měsíčně"
     else:
-        ml = " posluchačů měsíčně"  
+        ml = "posluchačů měsíčně"
 
     # send data to webhook
     webhookContent = (response2 + " – " + "**" + fullres.strip('\r\n') + "**" + ml)
