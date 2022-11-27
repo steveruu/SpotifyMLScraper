@@ -4,8 +4,6 @@ from selenium import webdriver
 # Python Dependencies
 from time import sleep
 from random import randint
-import re
-import discord_webhook
 from bs4 import BeautifulSoup
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
