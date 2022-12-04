@@ -147,7 +147,10 @@ def scrapArtist(artistLink):
     return nextLinksToCrawl
    
 # run the main loop for each artist
-webhook2 = DiscordWebhook(url='https://discord.com/api/webhooks/1046402781696753715/DuBZxciO1pTDRHq3FnEa2EYsMjI1flapP5wsw_VTDNxUh05TPOPZA2TxJnkZJak8taQy', username="cyrex real", content=date.today().strftime("update **%d/%m/%y:**"))
+webhook2 = DiscordWebhook(url='https://discord.com/api/webhooks/1046402781696753715/DuBZxciO1pTDRHq3FnEa2EYsMjI1flapP5wsw_VTDNxUh05TPOPZA2TxJnkZJak8taQy', username="cyrex real", content=date.today().strftime("<:carex:1042562384688066600>"))
+response = webhook2.execute() 
+
+webhook2 = DiscordWebhook(url='https://discord.com/api/webhooks/1046402781696753715/DuBZxciO1pTDRHq3FnEa2EYsMjI1flapP5wsw_VTDNxUh05TPOPZA2TxJnkZJak8taQy', username="cyrex real", content=date.today().strftime("update **%d/%m/%y:** "))
 response = webhook2.execute() 
 
 main(seed0)
