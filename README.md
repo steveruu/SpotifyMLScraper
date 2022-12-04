@@ -1,7 +1,7 @@
 <img src="assets\spotify_logo.png" alt="Spotify Logo" width="25" height="25"> Spotify Monthly Listener Scraper
 =======================
 
-Spotify Monthly Listener Scraper crawls through the Spotify web interface and extracts artist monthly listener information.
+Spotify Monthly Listener Scraper crawls through the Spotify web interface and extracts artist monthly listener information, then sends them via a Discord webhook
 
 ## Technology Stack
  - [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) - For parsing HTML code
