@@ -44,7 +44,7 @@ artists = [
                 "0IM0lwjzI0BYaayMweraKT", # matmej
                 
                 "2GaadbJKN8S8PbST0XwwQD", # xfgin
-                "34YDbjVGCySBRPAS19xl1L", # paypal adomi
+                "34YDbjVGCySBRPAS19xl1L", # paypal adomi 
 
                 "2IIf5hkbIzh1dqhG1T132E", # krobra08
                 "3TTWuZxamiQERzR42VNMS5", # sopka
@@ -84,6 +84,7 @@ seed24 = "/artist/" +  artists[24]
 seed25 = "/artist/" + artists[25]
 seed26 = "/artist/" + artists[26]
 seed27 = "/artist/" + artists[27]
+seed28 = "/artist/" + artists[28]
 
 # main() will handle the loop and crawling logic
 def main(startingArtist):
@@ -187,5 +188,6 @@ main(seed24)
 main(seed25)
 main(seed26)
 main(seed27)
+main(seed28)
 driver.quit()
 
