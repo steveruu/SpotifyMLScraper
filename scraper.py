@@ -22,31 +22,37 @@ artists = [
                 "3GuGHOzPZ0AhH9hK8LqCsK", # pepap
                 "1NspLfgAsucc39MeTipXNy", # car
                 "2aZD8xH5DKRUwAR6mXAifV", # hakaslakas
-                "3xVvsXvpURgj3zeTYiBtCv", # valian
                 "4NOFcRCgjvnRy8nKVGUM0L", # steveruu
-                "2b5QC4KWCMRKdD7LiqvfMQ", # faon
+                "3xVvsXvpURgj3zeTYiBtCv", # valian
                 "50ENuvgRkFZ5hMA0BFEeAM", # helena
+                "2b5QC4KWCMRKdD7LiqvfMQ", # faon
+                
                 "6kEMNp6TPPl70gOicGT0uN", # děcko acid
                 "2qSLwqeQFUHWEzC86u3vRM", # awoken
                 "2HJYEBrWgHX2MtQng48uSw", # gmane
                 "3D57Cu0cu9caAvtl41xUx6", # samzel
+                "5NTcWbyHYQjA20voWilXeG", # kila asky
                 "5QvicxsGxXNicXu1f9guia", # yui paly
                 "1HbkAuG6cZndTXlORaQgOq", # ubránek
                 "70Cg3NKGzk0G16trbrfYE5", # maria
                 "7h22ZneYwwRyOwlgnMd8So", # akarlos
-                "5NTcWbyHYQjA20voWilXeG", # kila asky
+                
                 "3tjBt96Yk1zS14xc8wldlT", # fembo ypl a
                 "1tqkzvbam2vnrUdredtErd", # shitlord
-                "0IM0lwjzI0BYaayMweraKT", # matmej
                 "0cpiDjS2bR8rWA8JLhU2uM", # givert
                 "5PNDGjJ1e6Tdr8LWmZDqPO", # ne duch
-                "34YDbjVGCySBRPAS19xl1L", # paply adomi
+                "0IM0lwjzI0BYaayMweraKT", # matmej
+                
                 "2GaadbJKN8S8PbST0XwwQD", # xfgin
-                "3TTWuZxamiQERzR42VNMS5", # sopka
+                "34YDbjVGCySBRPAS19xl1L", # paypal adomi
+
                 "2IIf5hkbIzh1dqhG1T132E", # krobra08
+                "3TTWuZxamiQERzR42VNMS5", # sopka
+                "6JHPfVpbSjecbv3oAOJSov", # filip benes
                 "30ZlxBZfVVt67x1giU0xa4", # hakalas
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
+
                 ]
 
 # Set the artist seeds
