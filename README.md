@@ -28,5 +28,5 @@ Since Spotify webpages are generated dynamically, we need a headless browser to 
 Download and save the <a href="http://chromedriver.chromium.org/downloads">Chrome Webdriver</a> at the root level.
 
 ## Authors
-  * Author of original repo - [Chris Yang](https://chrisyang.io) (ServiceNow Architect, GlideFast)  
+  * Author of [original repo](https://github.com/zaidongy/Spotify-Scraper) - [Chris Yang](https://chrisyang.io) (ServiceNow Architect, GlideFast)  
   * Fork Author - [Steveruu](https://steveruu.github.io) (idiot)
