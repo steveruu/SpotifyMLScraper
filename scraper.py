@@ -50,6 +50,7 @@ artists = [
                 "3TTWuZxamiQERzR42VNMS5", # sopka
                 "6JHPfVpbSjecbv3oAOJSov", # filip benes
                 "30ZlxBZfVVt67x1giU0xa4", # hakalas
+                "02pls7VjPaXvSbarvDUW7p", # maros2
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
                 "569eihmWcdg4HvSPDnjlPn" # ondredaj
 
@@ -85,6 +86,7 @@ seed25 = "/artist/" + artists[25]
 seed26 = "/artist/" + artists[26]
 seed27 = "/artist/" + artists[27]
 seed28 = "/artist/" + artists[28]
+seed29 = "/artist/" + artists[29]
 
 # main() will handle the loop and crawling logic
 def main(startingArtist):
@@ -117,7 +119,7 @@ def scrapArtist(artistLink):
 
     # Store the page response
     response = driver.find_element_by_class_name('Ydwa1P5GkCggtLlSvphs').get_attribute('innerHTML')
-    response2 = driver.find_element_by_class_name('rEN7ncpaUeSGL9z0NGQR').get_attribute('innerHTML').replace('</h1>','')[146:200].replace('">','')
+    response2 = driver.find_element_by_class_name('rEN7ncpaUeSGL9z0NGQR').get_attribute('innerHTML').replace('</h1>','')[146:200].replace('">','').replace('0%; font-size:','').replace('6rem','').replace('4.5rem','').replace('3rem','').replace('2rem','').replace(';','')
     if response2 == "COBRA 808":
         response2 = "COBRA_808"
     if response2 == "sađz":
@@ -189,5 +191,6 @@ main(seed25)
 main(seed26)
 main(seed27)
 main(seed28)
+main(seed29)
 driver.quit()
 
