@@ -34,26 +34,29 @@ artists = [
                 
                 "3D57Cu0cu9caAvtl41xUx6", # samzel
                 "5NTcWbyHYQjA20voWilXeG", # kila asky
-                "7h22ZneYwwRyOwlgnMd8So", # akarlos
                 "0cpiDjS2bR8rWA8JLhU2uM", # givert
+                "7h22ZneYwwRyOwlgnMd8So", # akarlos
+                
                 "1HbkAuG6cZndTXlORaQgOq", # ubránek
                 "5QvicxsGxXNicXu1f9guia", # yui paly
                 
                 
                 "3tjBt96Yk1zS14xc8wldlT", # fembo ypl a
+                "02pls7VjPaXvSbarvDUW7p", # maros2
                 "34YDbjVGCySBRPAS19xl1L", # paypal adomi
                 "1tqkzvbam2vnrUdredtErd", # shitlord
                 
-                "02pls7VjPaXvSbarvDUW7p", # maros2
+                
                 "5PNDGjJ1e6Tdr8LWmZDqPO", # ne duch
                 "2GaadbJKN8S8PbST0XwwQD", # xfgin
                 "0IM0lwjzI0BYaayMweraKT", # matmej                                                
                 "2IIf5hkbIzh1dqhG1T132E", # krobra08
                 "3TTWuZxamiQERzR42VNMS5", # sopka
                 "6JHPfVpbSjecbv3oAOJSov", # filip benes                           
+                "1hRLNOS6wPhSMLfXVaJk5t", # akuda
                 "6UIdgISBaIHMOvWwz4nfP1", # prasak
+                "569eihmWcdg4HvSPDnjlPn", # ondredaj
                 "30ZlxBZfVVt67x1giU0xa4", # hakalas
-                "569eihmWcdg4HvSPDnjlPn" # ondredaj
 
                 ]
 
