@@ -21,7 +21,7 @@ driver = webdriver.Chrome(executable_path=r'chromedriver.exe', chrome_options=ch
 artists = [
                 "3GuGHOzPZ0AhH9hK8LqCsK", # pepap
                 "1NspLfgAsucc39MeTipXNy", # car
-                "2aZD8xH5DKRUwAR6mXAifV", # hakaslakas
+                "5VW7PyWYrxkuWlzSxic7N2", # hakaslakas
                 "4NOFcRCgjvnRy8nKVGUM0L", # steveruu
                 "3xVvsXvpURgj3zeTYiBtCv", # valian
                 "6kEMNp6TPPl70gOicGT0uN", # děcko acid
